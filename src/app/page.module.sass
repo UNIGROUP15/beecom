@@ -1,0 +1,63 @@
+@use 'variables'
+  
+.mainContainer 
+  background: variables.$dark-blue
+  font-size: 1rem
+  min-height: 100vh
+  with: 100vw
+  @include variables.flex-center
+
+.loginContainer
+  position: absolute
+  top: 0
+  left: 0
+  border-radius: 0 0 15px 15px
+  background: variables.$secondary-neutral
+  width: 100vw
+  height: 60vh
+  
+.main 
+  min-height: 100vh
+  with: 100vw
+  @include variables.flex-center
+  background: variables.$gradient-screen
+  
+.loginForm
+  display: flex
+  justify-content: center
+  gap: 0.8rem
+  font-size: 1.2rem
+  flex-direction: column
+  max-width: 70%
+  margin: 8rem auto
+  & input
+    padding: 0.5rem 1rem
+    color: #585858
+    background: variables.$lighter-blue
+    border-radius: 5px
+    border: none
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0)
+
+.loginBottom
+  position: absolute
+  display: flex
+  justify-content: flex-end
+  align-items: flex-end
+  height: 35vh
+  width: calc(100vw - 2rem)
+  bottom: 1rem
+  right: 1rem
+  & p
+    position: absolute
+    width: 100%
+    text-align: center
+    top: 0
+    & a 
+      text-decoration: none
+
+.btn
+  background: variables.$dark-blue
+  padding: 0.5rem 1rem
+  border: none
+  border-radius: 10px
+  font-size: 1.2rem
