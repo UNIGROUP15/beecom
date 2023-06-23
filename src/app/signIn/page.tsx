@@ -1,12 +1,12 @@
 
 import Image from 'next/image'
 import styles from '../page.module.sass'
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react'
 
 
 interface Payload {
-	account: string;
-	password: string;
+	account: string
+	password: string
 }
 
 export default function SignIn() {
@@ -15,32 +15,29 @@ export default function SignIn() {
   const [pwd, setPwd] = useState('')
   const [payload, setPayload] = useState<Payload>({account: '', password: ''})
 
-  function handleAccount(e: KeyboardEvent) {
-		// setAccount(e.value);
-		console.log(e);
+  function handleAccount(e: ChangeEvent<HTMLInputElement>) {
+		setAccount(e.target.value)
 	}
-  function handlePwd(e: KeyboardEvent) {
-		console.log(e);
-	}
-  function handleSubmit() {
-    const newPayload = {
-      account: account,
-      password: pwd
-    }
-    setPayload(newPayload);
-    console.log(payload)
   
-  }
+	function handlePwd(e: ChangeEvent<HTMLInputElement>) {
+		setPwd(e.target.value)
+	}
+  
+	function handleSubmit(e: FormEvent<HTMLFormElement>) {
+		e.preventDefault();
+		setPayload({ account: account, password: pwd });
+	}
 
   return (
 		<div className={styles.mainContainer}>
 			<div className={styles.loginContainer}>
-				<form id='form' className={styles.loginForm}>
+				<form onSubmit={handleSubmit} id='form' className={styles.loginForm}>
 					<label htmlFor='account'>Conta</label>
 					<input
 						id='account'
 						autoComplete='true'
-						onKeyUp={(e) => handleAccount}
+						value={account}
+						onChange={handleAccount}
 						type='text'
 					/>
 
@@ -48,10 +45,11 @@ export default function SignIn() {
 					<input
 						id='password'
 						autoComplete='true'
-						onKeyUp={(e) => handlePwd}
+						value={pwd}
+						onChange={handlePwd}
 						type='password'
 					/>
-					<button onClick={() => handleSubmit} className={styles.btn}>
+					<button type='submit' className={styles.btn}>
 						Logar
 					</button>
 				</form>
