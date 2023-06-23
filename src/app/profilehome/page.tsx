@@ -6,7 +6,7 @@ export default function ProfileHome() {
   return (
 		<div className={styles.mainContainer}>
 			<TopIndex />
-
+			<FunctionalArea />
 		</div>
 	)
 }
@@ -59,6 +59,147 @@ function TopIndex() {
 					alt='profile'
 					priority
 				/>
+			</div>
+		</div>
+	);
+}
+
+function FunctionalArea() {
+
+	function handleSearch() {
+		console.log('fiz a busca')
+	}
+
+	return (
+		<div className={styles.areaContainer}>
+			<Image 
+				src={'/runner.svg'}
+				alt=''
+				width={16}
+				height={16}
+				priority
+			/>
+			<div className={styles.blockArea}>
+				<div className={styles.functions}>
+					<Image
+						src={'/market.svg'}
+						alt='market'
+						width={32}
+						height={32}
+						priority
+					/>
+					<Image
+						src={'/gains.svg'}
+						alt='gains'
+						width={32}
+						height={32}
+						priority
+					/>
+					<Image
+						src={'/wallet.svg'}
+						alt='wallet'
+						width={32}
+						height={32}
+						priority
+					/>
+					<Image
+						src={'/investments.svg'}
+						alt='investments'
+						width={32}
+						height={32}
+						priority
+					/>
+					<Image
+						src={'/bitcoin.svg'}
+						alt='bitcoin'
+						width={32}
+						height={32}
+						priority
+					/>
+				</div>
+				<form className={styles.searchForm}>
+					<label htmlFor='search'>Buscar:</label>
+					<input
+						id='search'
+						autoComplete='true'
+						placeholder='Nome da empresa'
+						onChange={handleSearch}
+						type='text'
+					/>
+				</form>
+				<div className={styles.cardConteiner}>
+					<Image
+						src={'/Equinix.png'}
+						alt='Equinix'
+						width={40}
+						height={40}
+						priority
+					/>
+					<div>
+						<p className={styles.company}>EQIX34</p>
+						<p>13:42:28 | Equinix Inc Drm Ed</p>
+					</div>
+					<div className={styles.color}>
+						<p className={styles.percent}>+2,56%</p>
+						<p className={styles.percent}>R$ 42,90</p>
+					</div>
+				</div>
+	
+				<div className={styles.cardConteiner}>
+					<Image
+						src={'/Equinix.png'}
+						alt='Equinix'
+						width={40}
+						height={40}
+						priority
+					/>
+					<div>
+						<p className={styles.company}>EQIX34</p>
+						<p>13:42:28 | Equinix Inc Drm Ed</p>
+					</div>
+					<div className={styles.color}>
+						<p className={styles.percent}>+2,56%</p>
+						<p className={styles.percent}>R$ 42,90</p>
+					</div>
+				</div>
+
+				<div className={styles.cardConteiner}>
+					<Image
+						src={'/Equinix.png'}
+						alt='Equinix'
+						width={40}
+						height={40}
+						priority
+					/>
+					<div>
+						<p className={styles.company}>EQIX34</p>
+						<p>13:42:28 | Equinix Inc Drm Ed</p>
+					</div>
+					<div className={styles.color}>
+						<p className={styles.percent}>+2,56%</p>
+						<p className={styles.percent}>R$ 42,90</p>
+					</div>
+				</div>
+
+				<div className={styles.cardConteiner}>
+					<Image
+						src={'/Equinix.png'}
+						alt='Equinix'
+						width={40}
+						height={40}
+						priority
+					/>
+					<div>
+						<p className={styles.company}>EQIX34</p>
+						<p>13:42:28 | Equinix Inc Drm Ed</p>
+					</div>
+					<div className={styles.color}>
+						<p className={styles.percent}>+2,56%</p>
+						<p className={styles.percent}>R$ 42,90</p>
+					</div>
+				</div>
+
+
 			</div>
 		</div>
 	);
