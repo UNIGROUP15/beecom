@@ -11,7 +11,6 @@ export default function ProfileHome() {
 	)
 }
 
-
 function TopIndex() {
 
   const [isOpen, setIsOpen] = useState(true)
@@ -94,6 +93,7 @@ function FunctionalArea() {
 				height={24} 
 				priority 
 			/>
+	
 			<div className={styles.blockArea}>
 				<div className={styles.blurtop}></div>
 
@@ -166,60 +166,61 @@ function FunctionalArea() {
 
 				<div className={styles.cardConteiner}>
 					<Image
-						src={'/Equinix.png'}
-						alt='Equinix'
+						src={'/microsoft.png'}
+						alt='microsoft'
 						width={40}
 						height={40}
 						priority
 					/>
 					<div>
-						<p className={styles.company}>EQIX34</p>
-						<p>13:42:28 | Equinix Inc Drm Ed</p>
+						<p className={styles.company}>MSFT34</p>
+						<p>18:25:10 | Microsoft Drm Ed</p>
 					</div>
 					<div className={styles.color}>
-						<p className={styles.percent}>+2,56%</p>
-						<p className={styles.percent}>R$ 42,90</p>
+						<p className={styles.percent}>+3,29%</p>
+						<p className={styles.percent}>R$ 66,72</p>
 					</div>
 				</div>
 
 				<div className={styles.cardConteiner}>
 					<Image
-						src={'/Equinix.png'}
-						alt='Equinix'
+						src={'/netflix.png'}
+						alt='Netflix'
 						width={40}
 						height={40}
 						priority
 					/>
 					<div>
-						<p className={styles.company}>EQIX34</p>
-						<p>13:42:28 | Equinix Inc Drm Ed</p>
+						<p className={styles.company}>NFLX34</p>
+						<p>09:31:58 | Netflix Drm</p>
 					</div>
 					<div className={styles.color}>
-						<p className={styles.percent}>+2,56%</p>
-						<p className={styles.percent}>R$ 42,90</p>
+						<p className={styles.percentNeg}>-0,96%</p>
+						<p className={styles.percentNeg}>R$ 36,80</p>
 					</div>
 				</div>
 
 				<div className={styles.cardConteiner}>
 					<Image
-						src={'/Equinix.png'}
-						alt='Equinix'
+						src={'/bmg.png'}
+						alt='bmg'
 						width={40}
 						height={40}
 						priority
 					/>
 					<div>
-						<p className={styles.company}>EQIX34</p>
-						<p>13:42:28 | Equinix Inc Drm Ed</p>
+						<p className={styles.company}>BMGB4</p>
+						<p>18:22:07 | Banco BMG Pn N1</p>
 					</div>
 					<div className={styles.color}>
-						<p className={styles.percent}>+2,56%</p>
-						<p className={styles.percent}>R$ 42,90</p>
+						<p className={styles.percent}>+0,45%</p>
+						<p className={styles.percent}>R$ 2,23</p>
 					</div>
 				</div>
 
 				<div className={styles.blur}></div>
 			</div>
+
 		</div>
 	);
 }

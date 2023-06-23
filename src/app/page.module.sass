@@ -157,12 +157,13 @@
   display: flex
   gap: 0.5rem
   align-items: flex-end
+  justify-content: space-between
   background: variables.$dark-blue
   margin: 1rem
   padding-block: 1.2rem
   padding-inline: 0.3rem
   border-radius: 10px
-  box-shadow: inset 1px 1px 20px #0000007e
+  box-shadow: inset 1px 1px 20px variables.$shadow-grain
   & .company
     font-weight: 700
   & .color
@@ -171,5 +172,8 @@
     justify-content: flex-start
     align-items: flex-end
     & .percent
-      color: variables.$positive-account
+      @include variables.pos-neg($pos: true)
+    & .percentNeg
+      @include variables.pos-neg($pos: false)
+      
 
