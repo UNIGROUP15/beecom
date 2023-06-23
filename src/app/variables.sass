@@ -9,6 +9,12 @@
   width: 85%
   height: $h
 
+@mixin pos-neg($pos)
+  @if($pos)
+    color: $positive-account
+  @else
+    color: $negative-account
+
 @mixin Indexprofile
   position: absolute
   top: 0
@@ -16,7 +22,7 @@
   border-radius: 0 0 15px 15px
   background: $secondary-neutral
   width: 100vw  
-  
+
 $gradient-screen: linear-gradient(to bottom, #46337A, #0097c1b6 )
 $gradient-blur: linear-gradient(to bottom, #ffffff00, #ffffff00, #6864AF 95%)
 $gradient-blur-top: linear-gradient(to top, #ffffff00, #ffffff00, #6864AF 80%)
@@ -26,3 +32,4 @@ $secondary-neutral: #6864AF
 $dark-blue: #33357A
 $shadow-grain: #0000007e
 $positive-account: #3cc22a
+$negative-account: #c22a2a
