@@ -3,6 +3,12 @@
   justify-content: center
   align-items: center
 
+@mixin blur($h)
+  position: absolute
+  left: 0.8rem
+  width: 85%
+  height: $h
+
 @mixin Indexprofile
   position: absolute
   top: 0
@@ -12,8 +18,11 @@
   width: 100vw  
   
 $gradient-screen: linear-gradient(to bottom, #46337A, #0097c1b6 )
+$gradient-blur: linear-gradient(to bottom, #ffffff00, #ffffff00, #6864AF 95%)
+$gradient-blur-top: linear-gradient(to top, #ffffff00, #ffffff00, #6864AF 80%)
 $light-blue: #0097c1b6
 $lighter-blue: #C8FCEA
 $secondary-neutral: #6864AF
 $dark-blue: #33357A
 $shadow-grain: #0000007e
+$positive-account: #3cc22a

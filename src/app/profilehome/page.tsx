@@ -15,15 +15,18 @@ export default function ProfileHome() {
 function TopIndex() {
 
   const [isOpen, setIsOpen] = useState(true)
-  const [olho, setOlho] = useState('/EyeOpen.svg');
+  const [olho, setOlho] = useState('/EyeOpen.svg')
+	const [amount, setAmount] = useState('3500,00')
 
   function handleIsOpen() {
     if(isOpen === true) {
       setIsOpen(false)
-      setOlho('/EyeClosed.svg');
+      setOlho('/EyeClosed.svg')
+			setAmount('********')
     } else {
-      setIsOpen(true);
-      setOlho('/EyeOpen.svg');
+			setIsOpen(true);
+      setOlho('/EyeOpen.svg')
+			setAmount('3500,00');
     } 
 
   }
@@ -60,6 +63,18 @@ function TopIndex() {
 					priority
 				/>
 			</div>
+
+			<div className={styles.amount}>
+				<h3>R$ {amount}</h3>
+				<Image
+					src={'/right.svg'}
+					alt='seta'
+					width={24}
+					height={24}
+					priority
+				/>
+			</div>
+
 		</div>
 	);
 }
@@ -73,13 +88,15 @@ function FunctionalArea() {
 	return (
 		<div className={styles.areaContainer}>
 			<Image 
-				src={'/runner.svg'}
-				alt=''
-				width={16}
-				height={16}
-				priority
+				src={'/runner.svg'} 
+				alt='slide' 
+				width={24} 
+				height={24} 
+				priority 
 			/>
 			<div className={styles.blockArea}>
+				<div className={styles.blurtop}></div>
+
 				<div className={styles.functions}>
 					<Image
 						src={'/market.svg'}
@@ -117,6 +134,7 @@ function FunctionalArea() {
 						priority
 					/>
 				</div>
+
 				<form className={styles.searchForm}>
 					<label htmlFor='search'>Buscar:</label>
 					<input
@@ -127,42 +145,7 @@ function FunctionalArea() {
 						type='text'
 					/>
 				</form>
-				<div className={styles.cardConteiner}>
-					<Image
-						src={'/Equinix.png'}
-						alt='Equinix'
-						width={40}
-						height={40}
-						priority
-					/>
-					<div>
-						<p className={styles.company}>EQIX34</p>
-						<p>13:42:28 | Equinix Inc Drm Ed</p>
-					</div>
-					<div className={styles.color}>
-						<p className={styles.percent}>+2,56%</p>
-						<p className={styles.percent}>R$ 42,90</p>
-					</div>
-				</div>
-	
-				<div className={styles.cardConteiner}>
-					<Image
-						src={'/Equinix.png'}
-						alt='Equinix'
-						width={40}
-						height={40}
-						priority
-					/>
-					<div>
-						<p className={styles.company}>EQIX34</p>
-						<p>13:42:28 | Equinix Inc Drm Ed</p>
-					</div>
-					<div className={styles.color}>
-						<p className={styles.percent}>+2,56%</p>
-						<p className={styles.percent}>R$ 42,90</p>
-					</div>
-				</div>
-
+				
 				<div className={styles.cardConteiner}>
 					<Image
 						src={'/Equinix.png'}
@@ -199,7 +182,43 @@ function FunctionalArea() {
 					</div>
 				</div>
 
+				<div className={styles.cardConteiner}>
+					<Image
+						src={'/Equinix.png'}
+						alt='Equinix'
+						width={40}
+						height={40}
+						priority
+					/>
+					<div>
+						<p className={styles.company}>EQIX34</p>
+						<p>13:42:28 | Equinix Inc Drm Ed</p>
+					</div>
+					<div className={styles.color}>
+						<p className={styles.percent}>+2,56%</p>
+						<p className={styles.percent}>R$ 42,90</p>
+					</div>
+				</div>
 
+				<div className={styles.cardConteiner}>
+					<Image
+						src={'/Equinix.png'}
+						alt='Equinix'
+						width={40}
+						height={40}
+						priority
+					/>
+					<div>
+						<p className={styles.company}>EQIX34</p>
+						<p>13:42:28 | Equinix Inc Drm Ed</p>
+					</div>
+					<div className={styles.color}>
+						<p className={styles.percent}>+2,56%</p>
+						<p className={styles.percent}>R$ 42,90</p>
+					</div>
+				</div>
+
+				<div className={styles.blur}></div>
 			</div>
 		</div>
 	);
