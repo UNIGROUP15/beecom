@@ -187,7 +187,7 @@ function FunctionalAreaHome() {
 				</form>
 
 				<div className={pageAnimate}>
-
+		
 					<div className={styles.cardConteiner}>
 						<Image
 							src={'/Equinix.png'}
