@@ -44,7 +44,6 @@
   justify-content: flex-end
   align-items: flex-end
   height: 35vh
-  width: calc(100vw - 2rem)
   bottom: 1rem
   right: 1rem
   & p
@@ -159,9 +158,11 @@
 
 .cards
   position: absolute
+  min-width: calc(100% - 2rem)
   animation: pageAnimation 1s linear
 .cardsAnimate
   position: absolute
+  width: calc(100% - 2rem)
   animation: pageAnimation2 1s linear
 
 @keyframes pageAnimation 
@@ -169,9 +170,9 @@
 @keyframes pageAnimation2 
   @include variables.pageAnimationOut
 
-
 .cardConteiner
   font-size: 0.8rem
+  min-width: calc(100% - 2rem)
   display: flex
   gap: 0.5rem
   align-items: flex-end
