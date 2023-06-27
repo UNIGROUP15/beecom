@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import styles from '../page.module.sass'
 import { useState, ChangeEvent, FormEvent } from 'react'
+import Link from 'next/link'
 
 
 interface Payload {
@@ -44,14 +45,13 @@ export default function SignUp() {
 		console.log('CPF:', cpf)
 		console.log('Password:', pwd)
 		console.log(payload)
-		e.preventDefault()
-		
+		e.preventDefault()	
 	}
 
   return (
 		<div className={styles.mainContainer}>
 			<div className={styles.loginContainer}>
-				<a href="/">
+				<Link href="/">
 					<Image 
 						className='img'
 						src={'/left.svg'}
@@ -60,7 +60,7 @@ export default function SignUp() {
 						width={32}
 						priority
 					/>
-				</a>
+				</Link>
 				<form onSubmit={handleSubmit} id='form2' className={styles.loginForm}>
 				
 					<label htmlFor='cpf'>CPF</label>

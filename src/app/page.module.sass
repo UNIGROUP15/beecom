@@ -5,6 +5,7 @@
   font-size: 1rem
   min-height: 100vh
   width: 100vw
+  overflow: hidden
   @include variables.flex-center
 
 .loginContainer
@@ -40,6 +41,7 @@
 
 .loginBottom
   position: absolute
+  width: calc(100vw - 2rem)
   display: flex
   justify-content: flex-end
   align-items: flex-end
@@ -66,44 +68,120 @@
   border: none
   border-radius: 10px
   font-size: 1.2rem
+  text-decoration: none
 
-.bloco
+.btnLog
+  position: relative
+  margin-top: 80%
+  width: 70%
+  max-height: calc(1ch + 3rem)
+  background: variables.$dark-blue
+  text-align: center
+  padding: 0.5rem
+  border-radius: 10px
+  font-size: 1.2rem
+  text-decoration: none
+
+.blocoClosed
   position: fixed
   top: 0
   left: 0
-  width: 100%
+  animate: closeProfile 400ms ease-in-out
   height: 23vh
-  & .indexProfile
-    @include variables.Indexprofile
-    height: 100%
-    display: flex
-    flex-direction: column
-    justify-content: center
-    gap: 1rem
-    padding-inline: 1.5rem
-    box-shadow: 2px 0 20px 3px variables.$shadow-grain
-    & .pImage
-      width: 56px
-      height: 56px
-      border-radius: 50%
-
-  & .options
-    position: relative
-    top: calc(50% - 20px)
-    display: flex
-    gap: 1.5rem
-    justify-content: flex-end
-    padding-inline: 2rem
-
-.amount
-  display: flex
-  width: 100vw
-  padding-block: 2rem
-  padding-inline: 2rem 3rem
-  justify-content: space-between
+  width: 100%
+.blocoOpened
   position: absolute
-  bottom: -5rem
+  top: 0
+  left: 0
   z-index: 100
+  animate: openProfile 400ms ease-in-out
+  height: 90vh
+  width: 100%
+
+.indexProfile
+  @include variables.Indexprofile
+  overflow: hidden
+  height: 100%
+  display: flex
+  justify-content: space-between
+  align-items: flex-start
+  padding: 2rem
+  gap: 1rem
+  padding-inline: 1.5rem
+  box-shadow: 2px 0 20px 3px variables.$shadow-grain
+
+.pImage
+  width: 100%
+  border-radius: 50%
+
+.options
+  display: flex
+  gap: 1.5rem
+  & .amountClose
+    @include variables.amount
+    padding-left: 2rem
+  & .amountOpen
+    @include variables.amount
+    padding-left: 1rem
+    font-size: 2rem
+    align-items: center
+  
+@keyframes openProfile 
+  0%
+    position: fixed
+    z-index: 200
+    height: 23vh
+  100%
+    position: absolute
+    z-index: 200
+    height: 90vh
+@keyframes closeProfile 
+  0%
+    position: absolute
+    z-index: 200
+    height: 90vh
+  100%
+    position: fixed
+    z-index: 200
+    height: 23vh
+
+@mixin lil
+  position: absolute
+  background: variables.$dark-blue
+  border-radius: 50px
+  width: 80vw
+  padding: 0.5rem 1rem
+  font-size: 1.2rem
+  left: 2rem
+  box-shadow: inset 1px 1px 10px #060c1dd7
+  & .lilcontainer
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.lilcard1
+  @include lil
+  top: 30vh
+.lilcard2
+  @include lil
+  top: 40vh
+.lilcard3
+  @include lil
+  top: 50vh
+.lilcard4
+  @include lil
+  top: 60vh
+.lilcard5
+  @include lil
+  top: 70vh
+.lilcard6
+  @include lil
+  text-align: center
+  text-decoration: none
+  top: 80vh
+  &:active
+    filter: brightness(0.8)
+  
 
 .areaContainer
   position: absolute
@@ -201,3 +279,43 @@
 @keyframes nameAnimationIn
   @include variables.keyAnimation($on: false)
   
+.gameContainer
+  width: calc(100vw - 3rem)
+  height: 75vh
+  padding: 1rem 0
+
+.gameProfile
+  @include variables.Indexprofile
+  overflow: hidden
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: flex-end
+  padding: 1.5rem
+  box-shadow: 2px 0 20px 3px variables.$shadow-grain
+  & .question
+    font-size: 1.3rem
+    color: variables.$lighter-blue
+    padding: 0.5rem 1rem
+    background: variables.$gradient-screen
+    border-radius: 10px
+    margin-block: 1rem
+  & .respostas
+    display: flex
+    & select
+      max-width: 100%
+      border-radius: 10px
+      background: variables.$dark-blue
+      padding: 0.5rem 1rem
+      height: 100px
+      overflow-y: auto
+      white-space: pre-wrap
+      & option
+        max-width: 100%
+        display: grid
+        place-content: center
+        white-space: pre-wrap
+        height: 100px
+        overflow-y: auto
+

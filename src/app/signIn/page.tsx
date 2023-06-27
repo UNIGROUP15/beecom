@@ -1,7 +1,9 @@
+'use client'
 
 import Image from 'next/image'
 import styles from '../page.module.sass'
 import { useState, ChangeEvent, FormEvent } from 'react'
+import Link from 'next/link'
 
 
 interface Payload {
@@ -49,16 +51,16 @@ export default function SignIn() {
 						onChange={handlePwd}
 						type='password'
 					/>
-					<button type='submit' className={styles.btn}>
+					<Link href='/profilehome' className={styles.btnLog}>
 						Logar
-					</button>
+					</Link>
 				</form>
 			</div>
 			<div className={styles.loginBottom}>
 				<p>
-					<a href='/signup'>ou crie sua conta na BeeCom</a>
+					<Link href="/signup">ou crie sua conta na BeeCom</Link>
 				</p>
-				<Image src='/Logo.svg' alt='Logo' width={100} height={100} priority />
+				<Image src={'/Logo.svg'} alt='Logo' width={100} height={100} priority />
 			</div>
 		</div>
 	);
